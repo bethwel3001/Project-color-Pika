@@ -1,21 +1,40 @@
-const Home = () => {
-    return (
-      <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center py-20">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Color Pika!</h1>
-        <p className="text-lg mb-8">
-          Explore the best color palettes and create stunning designs.
-        </p>
-        <div className="flex justify-center space-x-4">
-          <button className="bg-white text-blue-500 px-6 py-3 rounded-lg shadow-md hover:bg-blue-100 transition">
-            Create Palette
-          </button>
-          <button className="bg-white text-purple-500 px-6 py-3 rounded-lg shadow-md hover:bg-purple-100 transition">
-            Try for Free
-          </button>
-        </div>
+import { motion } from "framer-motion";
+
+export default function Home() {
+  return (
+    <section id="home" className="min-h-screen bg-gradient-to-r from-purple-500 to-blue-500 dark:from-gray-800 dark:to-gray-900 flex flex-col justify-center items-center text-white p-4">
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-4xl md:text-6xl font-bold mb-4 text-center"
+      >
+        Welcome to Color Pika!
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="text-lg md:text-xl mb-8 text-center"
+      >
+        Generate beautiful color palettes for your projects.
+      </motion.p>
+      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="px-6 py-2 bg-white text-purple-500 rounded-lg font-semibold"
+        >
+          Explore
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="px-6 py-2 bg-transparent border-2 border-white text-white rounded-lg font-semibold"
+        >
+          Free Trial
+        </motion.button>
       </div>
-    );
-  };
-  
-  export default Home;
-  
+    </section>
+  );
+}
