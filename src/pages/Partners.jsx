@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const partners = [
-  { name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Adobe_Creative_Cloud_logo.svg/1200px-Adobe_Creative_Cloud_logo.svg.png" },
+  { name: "Adobe", logo: "https://imgs.search.brave.com/HK73mWXUYut4YMr4L9x-dQ6oIY85bYrj4ths7DTEHQM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzA4/L0Fkb2JlLUxvZ28t/NTAweDMxMy5qcGc" },
   { name: "React", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" },
-  { name: "Dribbble", logo: "https://cdn.worldvectorlogo.com/logos/dribbble-icon-1.svg" },
+  { name: "Dribbble", logo: "https://imgs.search.brave.com/N_GtA7MQkzDmqAAlUI8salx0vb-vumDlJorfUUerS6Y/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZHJpYmJibGUuY29t/L3VzZXJ1cGxvYWQv/OTcwMTY0NC9maWxl/L29yaWdpbmFsLTM3/MzZhMjBiMWU1OWY1/YjRiMzUzNmNkZGZi/YzcxZGZmLnBuZz9y/ZXNpemU9NDAweDA" },
   { name: "Codepen", logo: "https://cdn.worldvectorlogo.com/logos/codepen-icon.svg" },
-  { name: "Pinterest", logo: "https://cdn.worldvectorlogo.com/logos/pinterest-1.svg" },
+  { name: "Pinterest", logo: "https://imgs.search.brave.com/nS2FP2MG4O6B--Yg_IWnloleHugKiKHC_jqgW3IUz5w/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/d2JsaWJyYXJ5Lm9y/Zy9zaXRlLWFzc2V0/cy9pbWFnZXMvcGlu/dGVyZXN0LWxvZ28v/QEBpbWFnZXMvaW1h/Z2UucG5n" },
 ];
 
 export default function Partners() {

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-export default function GenerateColor() {
+const GenerateColor = () => {
   const [color, setColor] = useState("#ffffff");
   const [colorCode, setColorCode] = useState("");
 
@@ -60,3 +60,5 @@ export default function GenerateColor() {
     </div>
   );
 }
+
+export default GenerateColor;

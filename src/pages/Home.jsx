@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 
-export default function Home() {
+const FreeTrialButton = () => {
+  const openGenerateColorPage = () => {
+    window.open(`${window.location.origin}/generate-color`, "_blank");
+  };
+  
   return (
     <section id="home" className="min-h-screen bg-gradient-to-r from-purple-500 to-blue-500 dark:from-gray-800 dark:to-gray-900 flex flex-col justify-center items-center text-white p-4">
       <motion.h1
@@ -30,6 +34,7 @@ export default function Home() {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          onClick={openGenerateColorPage}
           className="px-6 py-2 bg-transparent border-2 border-white text-white rounded-lg font-semibold"
         >
           Free Trial
@@ -38,3 +43,4 @@ export default function Home() {
     </section>
   );
 }
+export default FreeTrialButton;
