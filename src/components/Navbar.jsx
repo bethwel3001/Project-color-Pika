@@ -11,7 +11,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
   return (
     <nav className="p-4 bg-gradient-to-r from-purple-500 to-blue-500 dark:from-gray-800 dark:to-gray-900 fixed w-full z-10">
       <div className="container mx-auto flex justify-between items-center">
-        <a href="#home" className="text-white text-2xl font-bold">Color Pika!</a>
+        <a href="#home" className="text-white text-2xl font-bold">Kala-Pika🔥!</a>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-white">
             {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
