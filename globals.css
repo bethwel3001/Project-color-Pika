@@ -1,0 +1,15 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

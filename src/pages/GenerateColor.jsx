@@ -1,11 +1,23 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { useState, useEffect } from "react";
 
 const GenerateColor = () => {
   const [color, setColor] = useState("#ffffff");
   const [colorCode, setColorCode] = useState("");
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
+
+  // Handle scroll event to show/hide footer
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsFooterVisible(true);
+      } else {
+        setIsFooterVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleColorChange = (e) => {
     setColor(e.target.value);
@@ -24,21 +36,37 @@ const GenerateColor = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-500 to-blue-500 dark:from-gray-800 dark:to-gray-900 text-white">
-      <Navbar />
-      <div className="container mx-auto p-4 flex flex-col items-center">
+      {/* Custom Navbar */}
+      <nav className="bg-white dark:bg-gray-800 shadow-md p-4 fixed top-0 left-0 right-0 z-50">
+        <div className="container mx-auto flex justify-between items-center">
+          <h1 className="text-xl font-bold text-purple-500">Color Generator</h1>
+          <div className="flex space-x-4">
+            <button className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition-colors text-sm md:text-base">
+              Subscribe
+            </button>
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm md:text-base">
+              View Plans
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <div className="container mx-auto p-4 flex flex-col items-center pt-20">
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">Generate Colors</h1>
         <div className="w-full max-w-md">
           <input
             type="color"
             value={color}
             onChange={handleColorChange}
-            className="w-full h-16 mb-4"
+            className="w-full h-16 mb-4 cursor-pointer"
           />
           <textarea
             value={colorCode}
             onChange={(e) => setColorCode(e.target.value)}
-            className="w-full p-2 rounded-lg text-black mb-4"
+            className="w-full p-2 rounded-lg text-black mb-4 resize-none"
             placeholder="Enter or paste a color code"
+            rows="3"
           />
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
             <button
@@ -56,9 +84,48 @@ const GenerateColor = () => {
           </div>
         </div>
       </div>
-      <Footer />
+
+      {/* Custom Footer */}
+      <footer
+        className={`fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 transition-transform duration-300 ${
+          isFooterVisible ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center md:text-left">
+            {/* Links */}
+            <div>
+              <h3 className="font-bold mb-2">Links</h3>
+              <ul className="space-y-1">
+                <li><a href="#" className="hover:text-gray-400">About</a></li>
+                <li><a href="#" className="hover:text-gray-400">Contact</a></li>
+                <li><a href="#" className="hover:text-gray-400">Privacy Policy</a></li>
+              </ul>
+            </div>
+
+            {/* Back to Home Button */}
+            <div className="flex items-center justify-center">
+              <button className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition-colors">
+                Back to Home
+              </button>
+            </div>
+
+            {/* Subscribe Button */}
+            <div className="flex items-center justify-center">
+              <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                Subscribe
+              </button>
+            </div>
+
+            {/* NextSpace Software Tag */}
+            <div className="flex items-center justify-center md:justify-end">
+              <p className="text-gray-400">NextSpace Software</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
-}
+};
 
 export default GenerateColor;
